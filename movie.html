@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate House</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800&family=Poppins:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="movie.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold" href="#">RATE.HOUSE</a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Main navbar -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarMain">
+                <ul class="navbar-nav align-items-center">
+                    <!-- Categories Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                            <li><a class="dropdown-item" href="#">Music</a></li>
+                            <li><a class="dropdown-item" href="#">Movies</a></li>
+                            <li><a class="dropdown-item" href="#">Games</a></li>
+                            <li><a class="dropdown-item" href="#">Podcasts</a></li>
+                            <li><a class="dropdown-item" href="#">TV Shows</a></li>
+                            <li><a class="dropdown-item" href="#">Literature</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Sign In / Sign Up -->
+                <div class="d-flex align-items-center ms-3">
+                    <a href="./login.html" class="btn btn-signin">Sign In</a>
+                    <a href="./sign-up.html" class="btn btn-signup ms-2">Sign Up</a>
+
+                    <!-- Burger Dropdown -->
+                    <div class="dropdown ms-3">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" id="menuDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            ☰
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="menuDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="./contact-page.html">Contact</a></li>
+                            <li><a class="dropdown-item" href="#about-us">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <h1 class="main-title">Choose your own movie</h1>
+
+    <div class="movie-card">
+        <div class="movie-container">
+            <div class="movie-poster">
+                <img src="./images/review_images/image_1.png" alt="How to Train Your Dragon Movie Poster">
+            </div>
+
+            <div class="movie-info">
+                <p class="movie-subtitle">Add a movie</p>
+                <h2 class="movie-title">How to train your Dragon</h2>
+                <button class="watch-btn" onclick="watchMovie()">Search</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function watchMovie() {
+            // Добавляем эффект при клике
+            const btn = document.querySelector('.watch-btn');
+            btn.style.transform = 'scale(0.95)';
+
+            setTimeout(() => {
+                btn.style.transform = '';
+                alert('Starting movie: How to Train Your Dragon!');
+            }, 150);
+        }
+
+        // Добавляем интерактивность при загрузке
+        document.addEventListener('DOMContentLoaded', function () {
+            const card = document.querySelector('.movie-card');
+            const poster = document.querySelector('.movie-poster');
+
+            // Параллакс эффект при движении мыши
+            card.addEventListener('mousemove', function (e) {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+
+                poster.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            card.addEventListener('mouseleave', function () {
+                poster.style.transform = '';
+            });
+        });
+    </script>
+    <h1 class="main-title">Write a movie review</h1>
+
+    <div class="review-card">
+        <div class="movie-poster-another">
+            <img src="./images/review_images/image_1.png" alt="How to Train Your Dragon Movie Poster">
+        </div>
+
+        <form class="review-form" onsubmit="submitReview(event)">
+            <div class="movie-header">
+                <h2 class="movie-title">How to Train Your Dragon</h2>
+                <span class="movie-year">2025</span>
+            </div>
+
+            <div class="form-group">
+                <textarea class="review-textarea" placeholder="Add a review..." rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Tags</label>
+                <input type="text" class="tags-input" placeholder="eg. netflix">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Rating</label>
+                <div class="star-rating">
+                    <svg class="star" onclick="setRating(1)" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                    <svg class="star" onclick="setRating(2)" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                    <svg class="star" onclick="setRating(3)" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                    <svg class="star" onclick="setRating(4)" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                    <svg class="star" onclick="setRating(5)" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Save</button>
+        </form>
+    </div>
+
+    <script>
+        let currentRating = 0;
+
+        function setRating(rating) {
+            currentRating = rating;
+            const stars = document.querySelectorAll('.star');
+
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        function submitReview(event) {
+            event.preventDefault();
+
+            const textarea = document.querySelector('.review-textarea');
+            const tagsInput = document.querySelector('.tags-input');
+
+            const reviewData = {
+                review: textarea.value,
+                tags: tagsInput.value,
+                rating: currentRating
+            };
+
+            console.log('Review submitted:', reviewData);
+
+            // Анимация кнопки
+            const btn = document.querySelector('.submit-btn');
+            btn.style.transform = 'scale(0.95)';
+            btn.textContent = 'Saved!';
+
+            setTimeout(() => {
+                btn.style.transform = '';
+                btn.textContent = 'Save';
+
+                // Очистка формы
+                textarea.value = '';
+                tagsInput.value = '';
+                setRating(0);
+            }, 1500);
+        }
+
+        // Hover эффект для звезд
+        document.querySelectorAll('.star').forEach((star, index) => {
+            star.addEventListener('mouseenter', () => {
+                const stars = document.querySelectorAll('.star');
+                stars.forEach((s, i) => {
+                    if (i <= index) {
+                        s.style.fill = '#FBBF24';
+                    } else {
+                        s.style.fill = '#E5E7EB';
+                    }
+                });
+            });
+        });
+
+        document.querySelector('.star-rating').addEventListener('mouseleave', () => {
+            setRating(currentRating);
+        });
+    </script>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Левая часть - навигационные ссылки -->
+            <div class="footer-links">
+                <a href="./index.html" aria-label="Add to home">Add to home</a>
+                <a href="#" aria-label="Terms and Privacy">Terms and Privacy</a>
+                <a href="#" aria-label="Help and bugs">Help and bugs</a>
+            </div>
+
+            <!-- Правая часть - социальные сети и копирайт -->
+            <div class="footer-right">
+                <!-- Социальные иконки -->
+                <div class="social-icons">
+                    <!-- Facebook -->
+                    <div class="social-icon" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </div>
+
+                    <!-- Instagram -->
+                    <div class="social-icon" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </div>
+
+                    <!-- Behance -->
+                    <div class="social-icon" aria-label="Behance">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M6.938 4.503c.702 0 1.34.06 1.92.188.577.13 1.07.33 1.485.61.41.28.733.65.96 1.12.225.47.34 1.05.34 1.73 0 .74-.17 1.36-.507 1.86-.338.5-.837.9-1.502 1.22.906.26 1.576.72 2.022 1.37.448.66.665 1.45.665 2.36 0 .75-.13 1.39-.41 1.93-.28.55-.67 1-1.16 1.35-.48.348-1.05.6-1.67.76-.62.16-1.29.24-1.985.24H0V4.51h6.938v-.007zM16.94 16.665c.44.428 1.073.643 1.894.643.59 0 1.1-.148 1.53-.447.424-.29.68-.61.78-.94h2.588c-.403 1.28-1.048 2.2-1.9 2.75-.85.56-1.884.83-3.08.83-.837 0-1.584-.13-2.272-.4-.673-.27-1.24-.65-1.72-1.14-.464-.49-.823-1.08-1.077-1.77-.253-.69-.373-1.45-.373-2.27 0-.803.135-1.54.403-2.23.27-.7.644-1.28 1.12-1.79.495-.51 1.063-.89 1.736-1.15.668-.26 1.403-.4 2.238-.4.926 0 1.703.17 2.384.49.67.32 1.22.77 1.68 1.35.46.58.77 1.25.94 1.98.17.73.39 1.52.39 2.36v.67H16.94v-.005zm2.78-4.72c-.4-.4-.95-.6-1.64-.6-.453 0-.84.09-1.16.27-.32.18-.58.41-.78.7-.2.29-.33.6-.37.93-.05.33-.05.63-.05.9h4.53c-.07-.75-.17-1.51-.53-2.2zM2.77 8.87h3.85c.48 0 .9-.114 1.27-.35.36-.23.54-.65.54-1.26 0-.61-.18-1.02-.54-1.25-.36-.22-.79-.34-1.27-.34H2.77v3.2zm0 7.018h4.2c.54 0 1.01-.13 1.41-.4.4-.27.6-.77.6-1.518 0-.77-.2-1.27-.6-1.54-.4-.26-.87-.4-1.41-.4H2.77v3.86zm15.44-9.61h3.95v.88h-3.95v-.88z" />
+                        </svg>
+                    </div>
+
+                    <!-- Telegram -->
+                    <div class="social-icon" aria-label="Telegram">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                        </svg>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="social-icon" aria-label="Email">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Копирайт -->
+            </div>
+        </div>
+        <div class="copyright">
+            2025 rate.house
+        </div>
+    </footer>
+</body>
+
+</html>

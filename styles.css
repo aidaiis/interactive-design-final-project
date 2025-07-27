@@ -1,0 +1,1530 @@
+/* Базовые стили */
+body {
+    background-color: #4880FF;
+    width: 90%;
+    margin: 0 auto;
+    font-family: "Nunito Sans", sans-serif;
+    padding: 0 15px;
+}
+
+/* Navbar стили */
+.navbar-custom {
+    background-color: #4880FF;
+}
+
+.navbar-custom .navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    color: white !important;
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.navbar-custom .nav-link,
+.navbar-custom .btn {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.navbar-custom .navbar-nav .nav-link,
+.navbar-custom .navbar-brand,
+.navbar-custom .dropdown-toggle {
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.navbar-custom .navbar-nav .nav-link:hover,
+.navbar-custom .dropdown-toggle:hover {
+    color: #e0e0e0;
+}
+
+.navbar-custom .btn-signin {
+    color: white;
+    border: 1px solid white;
+    margin-right: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.navbar-custom .btn-signin:hover {
+    background-color: white;
+    color: #4880FF;
+}
+
+.navbar-custom .btn-signup {
+    background-color: white;
+    color: #4880FF;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.navbar-custom .btn-signup:hover {
+    background-color: #e0e0e0;
+    color: #4880FF;
+}
+
+.navbar-custom .dropdown-menu {
+    background-color: white;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-custom .dropdown-menu .dropdown-item {
+    color: #333;
+}
+
+.navbar-custom .dropdown-menu .dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* Главный блок */
+.main-block {
+    background-color: white;
+    width: 100%;
+    border-radius: 30px;
+    padding: 35px 20px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+}
+
+.search-block {
+    background: linear-gradient(to right, #4880FF, #67A3E6);
+    width: 80%;
+    max-width: 800px;
+    min-height: 259px;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.search-first-text {
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.search-second-text {
+    color: white;
+    font-size: 35px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.search-container {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    background-color: white;
+    border-radius: 999px;
+    padding: 10px 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+}
+
+.search-container::before {
+    content: "🔍";
+    margin-right: 8px;
+    font-size: 16px;
+    color: #aaa;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    background: transparent;
+    width: 100%;
+}
+
+/* Контейнер элементов */
+.items-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    margin-top: 35px;
+    padding: 0 20px;
+}
+
+.search-block-item {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: transform 0.2s;
+}
+
+.search-block-item:hover {
+    transform: translateY(-4px);
+}
+
+.title {
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.icons {
+    display: flex;
+    gap: 10px;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+/* Цвета по блокам */
+.purple .title {
+    color: #7765e3;
+}
+
+.purple .icon {
+    background: #ede9ff;
+    color: #7765e3;
+}
+
+.yellow .title {
+    color: #f5b000;
+}
+
+.yellow .icon {
+    background: #fff4cc;
+    color: #f5b000;
+}
+
+.green .title {
+    color: #00b67a;
+}
+
+.green .icon {
+    background: #dff8ed;
+    color: #00b67a;
+}
+
+.red .title {
+    color: #ff5e5e;
+}
+
+.red .icon {
+    background: #ffe6e6;
+    color: #ff5e5e;
+}
+
+/* Заголовки секций */
+.rating-title-text,
+.review-text {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-weight: 800;
+    margin: 30px 0;
+    width: 100%;
+}
+
+/* Секция рейтинга */
+.rating-section {
+    background: white;
+    border-radius: 16px;
+    padding: 30px 20px;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.book-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+    border: 1px solid #e8f5e8;
+}
+
+.book-cover-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 2;
+}
+
+.nav-arrow:hover {
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav-arrow.left {
+    left: -10px;
+}
+
+.nav-arrow.right {
+    right: -10px;
+}
+
+.nav-arrow::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border: 2px solid #666;
+    border-bottom: none;
+    border-right: none;
+    transform: rotate(-45deg);
+}
+
+.nav-arrow.right::before {
+    transform: rotate(135deg);
+}
+
+.book-cover {
+    width: 200px;
+    height: 300px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.book-cover>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.book-info {
+    text-align: left;
+}
+
+.author-year {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.author {
+    font-size: 18px;
+    font-weight: 600;
+    color: #4a5eff;
+}
+
+.year {
+    font-size: 18px;
+    color: #a0a0a0;
+    font-weight: 400;
+}
+
+.book-title-info {
+    font-size: 24px;
+    font-weight: 700;
+    color: #4a5eff;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.stars {
+    display: flex;
+    gap: 2px;
+}
+
+.star {
+    width: 16px;
+    height: 16px;
+    color: #ffa726;
+}
+
+.star.filled {
+    color: #ffa726;
+}
+
+.star.empty {
+    color: #e0e0e0;
+}
+
+.rating-count {
+    font-size: 14px;
+    color: #a0a0a0;
+    font-weight: 400;
+}
+
+.book-button {
+    background: #90d4aa;
+    border: none;
+    border-radius: 24px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 120px;
+}
+
+.albume-button {
+    background: #F93C65;
+    border: none;
+    border-radius: 24px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 120px;
+}
+
+.book-button:hover {
+    background: #7bc49a;
+    transform: translateY(-1px);
+}
+
+.heart-icon {
+    position: absolute;
+    bottom: 40px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    color: #ff69b4;
+    transition: all 0.2s ease;
+}
+
+.heart-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Популярные отзывы */
+.popular-reviews-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 24px;
+    padding: 40px 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.popular-reviews-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.popular-reviews-header-text {
+    font-size: 24px;
+    color: #666;
+    font-weight: 400;
+}
+
+.popular-reviews-signup-link {
+    color: #6366f1;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.popular-reviews-signup-link:hover {
+    text-decoration: underline;
+}
+
+.popular-reviews-section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.popular-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.popular-review-card {
+    background: #f9f9f9;
+    border-radius: 16px;
+    padding: 20px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.popular-review-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.popular-review-user-avatar img {
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    border: 3px solid white;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.popular-review-content {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.popular-review-item-cover {
+    width: 120px;
+    height: 80px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.popular-review-item-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.popular-review-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.popular-review-text {
+    font-size: 16px;
+    color: #374151;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.popular-review-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.popular-review-year {
+    font-size: 14px;
+    color: #9ca3af;
+}
+
+.popular-review-likes {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    color: #9ca3af;
+}
+
+.popular-review-heart-icon {
+    width: 16px;
+    height: 16px;
+    color: #ef4444;
+}
+
+.popular-review-item-info {
+    margin-bottom: 12px;
+}
+
+.popular-review-item-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 4px;
+}
+
+.popular-review-item-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+.popular-review-rating {
+    display: flex;
+    gap: 2px;
+}
+
+.popular-review-star {
+    color: #fbbf24;
+    font-size: 12px;
+}
+
+.popular-review-category-button {
+    align-self: flex-start;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: none;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.popular-review-movie-button {
+    background: #c7d2fe;
+    color: #3730a3;
+}
+
+.popular-review-book-button {
+    background: #bbf7d0;
+    color: #166534;
+}
+
+.popular-review-tv-button {
+    background: #d1d5db;
+    color: #374151;
+}
+
+.popular-review-podcast-button {
+    background: #fed7aa;
+    color: #9a3412;
+}
+
+.popular-review-category-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Категории дневника */
+.log-categories-container {
+    width: 100%;
+    background: white;
+    border-radius: 24px;
+    padding: 60px 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 85px;
+}
+
+.log-categories-title {
+    font-size: 48px;
+    font-weight: 400;
+    color: #4880FF;
+    margin-bottom: 40px;
+    letter-spacing: -0.5px;
+}
+
+.log-categories-description,
+.log-categories-description-secondary {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #374151;
+    margin-bottom: 12px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.log-categories-description-secondary {
+    margin-bottom: 40px;
+}
+
+.log-categories-diary-link {
+    color: #6366f1;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.log-categories-diary-link:hover {
+    color: #4f46e5;
+}
+
+.log-categories-start-button {
+    width: 100%;
+    max-width: 336px;
+    height: 42px;
+    background: #4AD991;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 20px rgba(74, 222, 128, 0.3);
+}
+
+.log-categories-start-button:hover {
+    background: #22c55e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(74, 222, 128, 0.4);
+}
+
+/* Форма отзыва */
+.movie-review-form-container {
+    margin-top: 85px;
+    width: 100%;
+    background: white;
+    border-radius: 24px;
+    padding: 40px 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.movie-review-form-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.movie-review-form-poster {
+    flex-shrink: 0;
+    width: 200px;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+}
+
+.movie-review-form-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.movie-review-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.movie-review-form-title-section {
+    flex: 1;
+}
+
+.movie-review-form-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.movie-review-form-year {
+    font-size: 28px;
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+.movie-review-form-review-input {
+    width: 100%;
+    min-height: 60px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 16px;
+    color: #374151;
+    font-family: inherit;
+    resize: vertical;
+    transition: border-color 0.2s ease;
+    background: #f9fafb;
+}
+
+.movie-review-form-review-input::placeholder {
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+.movie-review-form-review-input:focus {
+    outline: none;
+    border-color: #6366f1;
+    background: white;
+}
+
+.movie-review-form-rating-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.movie-review-form-rating-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.movie-review-form-rating-stars {
+    display: flex;
+    gap: 8px;
+}
+
+.movie-review-form-star {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #d1d5db;
+}
+
+.movie-review-form-star:hover {
+    color: #fbbf24;
+    transform: scale(1.1);
+}
+
+.movie-review-form-star.filled {
+    color: #fbbf24;
+}
+
+.movie-review-form-star.active {
+    color: #f59e0b;
+}
+
+.movie-review-form-save-button {
+    background: #4ade80;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
+    align-self: flex-start;
+}
+
+.movie-review-form-save-button:hover {
+    background: #22c55e;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(74, 222, 128, 0.4);
+}
+
+/* МЕДИА-ЗАПРОСЫ ДЛЯ АДАПТИВНОСТИ */
+
+/* Планшеты (768px и меньше) */
+@media (max-width: 768px) {
+    body {
+        width: 95%;
+        padding: 0 10px;
+    }
+
+    .navbar-custom .navbar-brand {
+        font-size: 28px;
+    }
+
+    .search-first-text {
+        font-size: 24px;
+    }
+
+    .search-second-text {
+        font-size: 28px;
+    }
+
+    .search-block {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .items-container {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    .rating-title-text,
+    .review-text {
+        font-size: 36px;
+        padding: 0 10px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+
+    .book-cover {
+        width: 150px;
+        height: 225px;
+    }
+
+    .popular-reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .popular-reviews-container {
+        padding: 30px 15px;
+    }
+
+    .popular-review-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .popular-review-item-cover {
+        width: 100%;
+        height: 120px;
+        margin: 0 auto;
+    }
+
+    .log-categories-container {
+        padding: 40px 15px;
+    }
+
+    .log-categories-title {
+        font-size: 36px;
+        margin-bottom: 32px;
+    }
+
+    .log-categories-description,
+    .log-categories-description-secondary {
+        font-size: 16px;
+    }
+
+    .movie-review-form-content {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .movie-review-form-poster {
+        width: 160px;
+        height: 240px;
+        margin: 0 auto;
+    }
+
+    .movie-review-form-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .movie-review-form-title {
+        font-size: 24px;
+    }
+
+    .movie-review-form-year {
+        font-size: 20px;
+    }
+
+    .movie-review-form-container {
+        padding: 24px 15px;
+    }
+}
+
+/* Мобильные устройства (480px и меньше) */
+@media (max-width: 480px) {
+    body {
+        width: 100%;
+        padding: 0 5px;
+    }
+
+    .navbar-custom .navbar-brand {
+        font-size: 24px;
+    }
+
+    .main-block {
+        border-radius: 20px;
+        padding: 20px 10px;
+    }
+
+    .search-block {
+        width: 100%;
+        min-height: 200px;
+        padding: 15px;
+    }
+
+    .search-first-text {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .search-second-text {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .search-container {
+        max-width: 250px;
+        padding: 8px 12px;
+    }
+
+    .items-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 5px;
+    }
+
+    .search-block-item {
+        padding: 15px;
+    }
+
+    .rating-title-text,
+    .review-text {
+        font-size: 28px;
+        padding: 0 5px;
+        line-height: 1.2;
+    }
+
+    .rating-section {
+        padding: 20px 10px;
+    }
+
+    .cards-grid {
+        padding: 0 5px;
+    }
+
+    .book-card {
+        padding: 15px;
+    }
+
+    .book-cover {
+        width: 120px;
+        height: 180px;
+    }
+
+    .book-title-info {
+        font-size: 18px;
+    }
+
+    .author {
+        font-size: 14px;
+    }
+
+    .year {
+        font-size: 14px;
+    }
+
+    .book-button {
+        width: 100px;
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .popular-reviews-container {
+        padding: 20px 10px;
+    }
+
+    .popular-reviews-header-text {
+        font-size: 18px;
+    }
+
+    .popular-review-card {
+        padding: 15px;
+    }
+
+    .popular-review-user-avatar img {
+        width: 50px;
+        height: 50px;
+        top: -8px;
+        left: 15px;
+    }
+
+    .popular-review-content {
+        margin-top: 20px;
+    }
+
+    .popular-review-item-cover {
+        height: 100px;
+    }
+
+    .popular-review-text {
+        font-size: 14px;
+    }
+
+    .log-categories-container {
+        padding: 30px 10px;
+    }
+
+    .log-categories-title {
+        font-size: 28px;
+        margin-bottom: 24px;
+    }
+
+    .log-categories-description,
+    .log-categories-description-secondary {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+
+    .log-categories-description-secondary {
+        margin-bottom: 32px;
+    }
+
+    .log-categories-start-button {
+        height: 38px;
+        font-size: 16px;
+    }
+
+    .movie-review-form-container {
+        padding: 20px 10px;
+    }
+
+    .movie-review-form-poster {
+        width: 140px;
+        height: 210px;
+    }
+
+    .movie-review-form-title {
+        font-size: 20px;
+    }
+
+    .movie-review-form-year {
+        font-size: 18px;
+    }
+
+    .movie-review-form-save-button {
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+
+    .movie-review-form-rating-stars {
+        gap: 4px;
+    }
+
+    .movie-review-form-star {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Очень маленькие экраны (360px и меньше) */
+@media (max-width: 360px) {
+    .navbar-custom .navbar-brand {
+        font-size: 20px;
+    }
+
+    .search-first-text {
+        font-size: 18px;
+    }
+
+    .search-second-text {
+        font-size: 20px;
+    }
+
+    .rating-title-text,
+    .review-text {
+        font-size: 24px;
+    }
+
+    .book-cover {
+        width: 100px;
+        height: 150px;
+    }
+
+    .book-title-info {
+        font-size: 16px;
+    }
+
+    .log-categories-title {
+        font-size: 24px;
+    }
+
+    .movie-review-form-title {
+        font-size: 18px;
+    }
+
+    .movie-review-form-year {
+        font-size: 16px;
+    }
+}
+
+/* Большие экраны */
+@media (min-width: 1200px) {
+    body {
+        width: 85%;
+        max-width: 1400px;
+    }
+
+    .search-first-text {
+        font-size: 36px;
+    }
+
+    .search-second-text {
+        font-size: 42px;
+    }
+
+    .rating-title-text,
+    .review-text {
+        font-size: 60px;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .items-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+    }
+
+    .popular-reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+/* Дополнительные адаптивные улучшения */
+@media (max-width: 992px) {
+    .navbar-custom .d-flex {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar-custom .btn-signin,
+    .navbar-custom .btn-signup {
+        width: 100%;
+        margin: 2px 0;
+    }
+}
+
+/* Улучшения для средних экранов */
+@media (min-width: 769px) and (max-width: 1199px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .items-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Горизонтальная ориентация мобильных устройств */
+@media (max-width: 768px) and (orientation: landscape) {
+    .search-block {
+        min-height: 180px;
+    }
+
+    .search-first-text {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .search-second-text {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .rating-title-text,
+    .review-text {
+        font-size: 32px;
+    }
+}
+
+/* Контейнеры для лучшего отображения */
+@media (max-width: 576px) {
+    .container-fluid {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+    }
+}
+
+/* Исправления для Safari iOS */
+@supports (-webkit-appearance: none) {
+    .search-input {
+        -webkit-appearance: none;
+        border-radius: 999px;
+    }
+
+    .book-button,
+    .log-categories-start-button,
+    .movie-review-form-save-button {
+        -webkit-appearance: none;
+    }
+}
+
+/* Улучшения доступности */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Высокая плотность пикселей */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
+    .book-cover,
+    .popular-review-item-cover img,
+    .movie-review-form-poster {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Футер */
+.footer {
+    padding: 20px 0;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Левая часть - ссылки */
+.footer-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 8px 0;
+}
+
+.footer-links a:hover {
+    color: #e0e7ff;
+    transform: translateY(-2px);
+}
+
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+/* Правая часть - социальные сети и копирайт */
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* Социальные иконки */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.social-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-icon:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: white;
+}
+
+/* Копирайт */
+.copyright {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .footer-links {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .footer-links a {
+        font-size: 15px;
+    }
+
+    .footer-right {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .social-icons {
+        order: -1;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 15px 0;
+    }
+
+    .footer-container {
+        padding: 0 15px;
+        gap: 12px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer-links a {
+        font-size: 14px;
+    }
+
+    .social-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .social-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .copyright {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 360px) {
+    .footer-links {
+        gap: 12px;
+    }
+
+    .social-icons {
+        gap: 12px;
+    }
+}
+
+/* Анимация появления */
+.footer {
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Дополнительные эффекты */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
